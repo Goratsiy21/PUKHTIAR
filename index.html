@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфоліо</title>
+    <!-- Підключення шрифту Jura з Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Jura', sans-serif; /* Використання шрифту Jura */
             margin: 0;
             padding: 0;
             background-image: url('img/3.jpg');
             background-size: cover;
             background-repeat: repeat-y;
             background-attachment: fixed;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .label {
+            font-weight: bold; /* Жирний текст для лейблів */
         }
 
         /* Сторінка */
@@ -110,10 +125,11 @@
         <div class="profile">
             <img src="img/1.jpg" alt="Фото">
             <h1>Ім'я</h1>
-            <p>Посада: Вчитель</p>
-            <p>Вчительське звання: Старший вчитель</p>
-            <p>Наукова ступінь: Кандидат наук</p>
-            <p>Стаж роботи: 15 років</p>
+            <p><span class="label">Посада:</span> Вчитель</p>
+            <p><span class="label">Вчительське звання:</span> Старший вчитель</p>
+            <p><span class="label">Наукова ступінь:</span> Кандидат наук</p>
+            <p><span class="label">Стаж роботи:</span> 15 років</p>
+
         </div>
     </div>
 
