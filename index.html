@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфоліо</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://c8.alamy.com/comp/2JM774D/texture-military-camouflage-seamless-pattern-abstract-army-vector-illustration-2JM774D.jpg');
+            background-size: cover;
+            background-repeat: repeat-y;
+            background-attachment: fixed;
+        }
+
+        /* Сторінка */
+        .main-content {
+            padding: 20px;
+            margin-left: 250px;
+            background-color: rgba(255, 255, 255, 0.9);
+            min-height: 100vh;
+        }
+
+        /* Ліва панель */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #008000;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .sidebar img {
+            width: 33.33%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            text-align: left;
+        }
+
+        .sidebar a:hover {
+            background-color: #006600;
+        }
+
+        /* Головна сторінка */
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .profile h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .profile p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        /* Секції з каруселлю */
+        .carousel-container {
+            display: none;
+            text-align: center;
+        }
+
+        .carousel-container img {
+            width: 300px;
+            height: auto;
+            margin: 20px auto; /* Відступ між зображеннями і автоматичне центровання */
+            background-color: transparent; 
+            border: none; 
+            box-shadow: none; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ліва панель -->
+    <div class="sidebar">
+        <img src="img/2.png" alt="Емблема">
+        <a href="#" onclick="showSection('main')">Головна сторінка</a>
+        <a href="#" onclick="showSection('contests')">Конкурси та олімпіади</a>
+        <a href="#" onclick="showSection('methods')">Методична скарбничка</a>
+        <a href="#" onclick="showSection('courses')">Курси підвищення кваліфікації</a>
+        <a href="#" onclick="showSection('awards')">Грамоти та нагороди</a>
+        <a href="#" onclick="showSection('diplomas')">Дипломи</a>
+    </div>
+
+    <!-- Головна сторінка -->
+    <div class="main-content" id="main">
+        <div class="profile">
+            <img src="your-photo.jpg" alt="Фото">
+            <h1>Твоє ім'я</h1>
+            <p>Посада: Вчитель</p>
+            <p>Вчительське звання: Старший вчитель</p>
+            <p>Наукова ступінь: Кандидат наук</p>
+            <p>Стаж роботи: 15 років</p>
+        </div>
+    </div>
+
+    <!-- Конкурси та олімпіади -->
+    <div class="main-content carousel-container" id="contests">
+        <h2>Конкурси та олімпіади</h2>
+        <img src="https://lh3.googleusercontent.com/P45EkbWssAQ1vBsY_hDo0b3ksW0Hav7CBXXygKRKmVqGYLqNbcibHRSJ_6KRI2ubNQW6V_lF9yYfii8fpKjsc-E=w16383" alt="Конкурс 1">
+        <img src="https://lh3.googleusercontent.com/P45EkbWssAQ1vBsY_hDo0b3ksW0Hav7CBXXygKRKmVqGYLqNbcibHRSJ_6KRI2ubNQW6V_lF9yYfii8fpKjsc-E=w16383" alt="Конкурс 2">
+    </div>
+
+    <!-- Методична скарбничка -->
+    <div class="main-content carousel-container" id="methods">
+        <h2>Методична скарбничка</h2>
+        <img src="img/1.jpg" alt="Методична робота 1">
+        <img src="img/1.jpg" alt="Методична робота 1">
+        <img src="img/1.jpg" alt="Методична робота 1">
+        <img src="img/1.jpg" alt="Методична робота 1">
+        <img src="img/1.jpg" alt="Методична робота 1">
+        <img src="img/1.jpg" alt="Методична робота 1">
+
+    </div>
+
+    <!-- Курси підвищення кваліфікації -->
+    <div class="main-content carousel-container" id="courses">
+        <h2>Курси підвищення кваліфікації</h2>
+        <img src="course1.jpg" alt="Курс 1">
+        <img src="course2.jpg" alt="Курс 2">
+    </div>
+
+    <!-- Грамоти та нагороди -->
+    <div class="main-content carousel-container" id="awards">
+        <h2>Грамоти та нагороди</h2>
+        <img src="award1.jpg" alt="Грамота 1">
+        <img src="award2.jpg" alt="Грамота 2">
+    </div>
+
+    <!-- Дипломи -->
+    <div class="main-content carousel-container" id="diplomas">
+        <h2>Дипломи</h2>
+        <img src="diploma1.jpg" alt="Диплом 1">
+        <img src="diploma2.jpg" alt="Диплом 2">
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.main-content');
+            sections.forEach(section => section.style.display = 'none');
+            
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Показати головну сторінку при завантаженні
+        showSection('main');
+    </script>
+
+</body>
+</html>
